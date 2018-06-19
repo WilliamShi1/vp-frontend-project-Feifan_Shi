@@ -1,0 +1,25 @@
+<main role="main" class="container">
+  <div class="page-heading">
+      <h2 class="mt-4">Friends</h2>
+  </div>
+  
+  <div class="container">
+    <div class="row" style="flex-wrap: nowrap;">
+      <div ng-repeat="friend in friends" class="col-md-3 text-center" style="border: 1px solid lightgrey;height: 3.6in; width: 1in; margin: 2px;">
+        <span>
+          <img style="width: 90%" ng-src="{{ friend.picture.large }}" alt="profileImage" />
+        </span>
+        <br>
+        <br>
+        <span><strong>
+          {{ friend.name.first }} {{ friend.name.last }}
+        </strong></span>
+        <br>
+        <br>
+        <span>
+          <button type="button" class="btn btn-primary">Send Friend Request</button>
+        </span>
+      </div>
+    </div>
+  </div>
+</main>

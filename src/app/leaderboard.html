@@ -4,19 +4,26 @@
       <p class="lead">Friend Steps Leaderboard</p>
   </div>
 
-    <ul class="friends-list">
-      <li class='friends-list--header'>
-        <span>Friend</span>
-        <span>Steps</span>
-      </li>
-      <li ng-repeat="user in users">
-        <span>
-            {{ user.name.first }} {{ user.name.last }}
-        </span>
-        <span>
-          {{ user.steps }}
-        </span>
-      </li>
-    </ul>
-
+  <ul class="friends-list">
+    <li class='friends-list--header'>
+      <span>Rank</span>
+      <span>Image</span>
+      <span>Friend</span>
+      <span>Steps</span>
+    </li>
+    <li ng-repeat="user in users | orderBy:'-steps'">
+      <span>
+        {{$index + 1}}
+      </span>
+      <span>
+        <img ng-src="{{ user.picture.thumbnail }}" alt="profileImage" />
+      </span>
+      <span>
+        {{ user.name.first }} {{ user.name.last }}
+      </span>
+      <span>
+        {{ user.steps }}
+      </span>
+    </li>
+  </ul>
 </main>
